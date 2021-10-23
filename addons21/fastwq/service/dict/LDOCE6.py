@@ -11,9 +11,9 @@ MAPPINGS = [
     ['br', [re.compile(VOICE_PATTERN % r'r'), re.compile(VOICE_PATTERN_WQ % (r'brevoice', r'brevoice'))]],
     ['us', [re.compile(VOICE_PATTERN % r'b'), re.compile(VOICE_PATTERN_WQ % (r'amevoice', r'amevoice'))]]
 ]
+#
 LANG_TO_REGEXPS = {lang: regexps for lang, regexps in MAPPINGS}
 DICT_PATH = u'' # u'E:\\BaiduYunDownload\\mdx\\L6mp3.mdx'
-
 
 @register([u'本地词典-LDOCE6', u'MDX-LDOCE6'])
 class Ldoce6(MdxService):
@@ -49,7 +49,7 @@ class Ldoce6(MdxService):
         for regexp in LANG_TO_REGEXPS[voice]:
             match = regexp.search(html)
             if match:
-                val = '/' + match.group(1)
+                val = '/' + match.group(1) # /hwd/bre/b/clause0205.mp3
                 name = get_hex_name('mdx-'+self.unique.lower(), val, 'mp3')
                 name = self.save_file(val, name)
                 if name:
