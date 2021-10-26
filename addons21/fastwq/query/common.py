@@ -123,21 +123,21 @@ def promot_choose_css(missed_css):
         filename = u'_' + css['file']
         if not os.path.exists(filename) and not css['file'] in checked:
             checked.add(css['file'])
-            showInfo(
-                Template.miss_css.format(dict=css['title'], css=css['file']))
-            try:
-                filepath = css['dict_path'][:css['dict_path'].rindex(os.path.
-                                                                     sep) + 1]
-                filepath = QFileDialog.getOpenFileName(
-                    directory=filepath,
-                    caption=u'Choose css file',
-                    filter=u'CSS (*.css)')
-                if filepath:
-                    shutil.copy(filepath, filename)
-                    wrap_css(filename)
-
-            except KeyError:
-                pass
+            # showInfo(
+            #     Template.miss_css.format(dict=css['title'], css=css['file']))
+            # try:
+            #     filepath = css['dict_path'][:css['dict_path'].rindex(os.path.
+            #                                                          sep) + 1]
+            #     filepath = QFileDialog.getOpenFileName(
+            #         directory=filepath,
+            #         caption=u'Choose css file',
+            #         filter=u'CSS (*.css)')
+            #     if filepath:
+            #         shutil.copy(filepath, filename)
+            #         wrap_css(filename)
+            #
+            # except KeyError:
+            #     pass
 
 
 def add_to_tmpl(note, **kwargs):

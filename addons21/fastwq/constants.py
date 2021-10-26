@@ -34,6 +34,7 @@ class Endpoint:
 
 
 class Template:
+    miss_css = u'''<b>{dict}</b><br/>{css}<br/>'''
     tmpl_about = u'''<b>{t0}</b><br/>{version}<br/><b>{t1}</b><br/>
 <a href="{url}">{url}</a><br/><b>{t2}</b><br/>
 <a href="{feedback0}">{feedback0}</a><br/>
